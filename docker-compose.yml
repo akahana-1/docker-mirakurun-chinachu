@@ -16,8 +16,8 @@ services:
     build:
         context: chinachu
         args:
-         - REPOSITORY=git://github.com/Chinachu/Chinachu.git
-         - BRANCH=master
+         - REPOSITORY=git://github.com/h-mineta/Chinachu.git
+         - BRANCH=pr-channel-sync
     container_name: chinachu
     ports:
      - "10772:10772"

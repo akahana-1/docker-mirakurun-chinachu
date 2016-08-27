@@ -6,7 +6,7 @@ fi
 rm -f /var/run/chinachu-operator.pid > /dev/null 2>&1
 rm -f /var/run/chinachu-wui.pid > /dev/null 2>&1
 
-countdown_max=120
+countdown_max=300
 run_countdown=0
 while [ ${run_countdown} -le ${countdown_max} ]
 do
