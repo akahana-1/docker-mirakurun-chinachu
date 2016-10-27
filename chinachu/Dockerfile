@@ -12,6 +12,7 @@ RUN set -x \
 		coreutils \
 		curl \
 		ca-certificates \
+		procps \
 	\
 	&& apk add --virtual .build-deps \
 		git \
