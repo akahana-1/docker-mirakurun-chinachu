@@ -9,6 +9,6 @@ if [ ! -s /usr/local/etc/mirakurun/server.yml ]; then
 	cat /usr/local/share/mirakurun/server.yml > /usr/local/etc/mirakurun/server.yml
 fi
 
-pcscd
+# pcscd
 /usr/bin/mirakurun start
 /usr/bin/mirakurun log server

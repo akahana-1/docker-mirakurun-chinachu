@@ -8,16 +8,17 @@ services:
     ports:
       - "40772:40772"
     volumes:
-     - /etc/localtime:/etc/localtime:ro
-     - ./mirakurun/conf:/usr/local/etc/mirakurun
-     - ./mirakurun/db:/usr/local/var/db/mirakurun
-
+      - /etc/localtime:/etc/localtime:ro
+      - /dev/usb:/dev/usb
+      - ./mirakurun/conf:/usr/local/etc/mirakurun
+      - ./mirakurun/db:/usr/local/var/db/mirakurun
+  
   chinachu:
     build:
         context: chinachu
         args:
          - REPOSITORY=git://github.com/Chinachu/Chinachu.git
-         - BRANCH=master
+         - BRANCH=gamma
     container_name: chinachu
     ports:
      - "10772:10772"
@@ -27,6 +28,6 @@ services:
      - ./chinachu/conf/config.json:/usr/local/chinachu/config.json
      - ./chinachu/conf/rules.json:/usr/local/chinachu/rules.json
      - ./chinachu/data:/usr/local/chinachu/data
-     - ./recorded:/usr/local/chinachu/recorded
+     - /home/ps-akahana/data/recorded:/usr/local/chinachu/recorded
     links:
      - mirakurun:container-mirakurun
