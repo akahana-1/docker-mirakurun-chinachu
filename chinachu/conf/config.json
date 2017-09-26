@@ -1,4 +1,5 @@
 {
+  "uid" : "chinachu",
   "recordedDir" : "/usr/local/chinachu/recorded/",
   "temporaryDir": "",
   
@@ -7,43 +8,20 @@
   ],
   "wuiAllowCountries": ["JP"],
   
-  "wuiPort"        : 10772,
-  "wuiHost"        : "::",
+  "wuiOpenServer"  : true,
+  "wuiOpenPort"    : 20772,
+  "wuiOpenHost"    : "0.0.0.0",
   "wuiTlsKeyPath"  : null,
   "wuiTlsCertPath" : null,
-  "wuiOpenServer"  : false,
-  "wuiOpenPort"    : 20772,
   "wuiXFF"         : false,
-  "wuiPreviewer"   : true,
-  "wuiStreamer"    : true,
-  "wuiFiler"       : true,
-  "wuiConfigurator": true,
+  "wuiHost"        : "::",
 
-  "schedulerMirakurunPath" : "container-mirakurun:40772/",
+  "mirakurunPath" : "http://container-mirakurun:40772/",
   "schedulerEpgRecordTime": 5,
   "operSchedulerProcessTime" : 5000,
   "operSchedulerIntervalTime" : 600000,
   "operRecOffsetStart" : 3000,
   "operRefOffsetEnd" : -2000,
 
-  "recordedFormat": "[<date:yymmdd-HHMM>][<type><channel>][<tuner>]<title>.m2ts",
-  
-  "tuners": [
-    {
-      "name"        : "Mirakurun-T1",
-      "isScrambling": false,
-      "types"       : [ "GR" ],
-      "command"     : "rivarun --b25 --mirakurun container-mirakurun:40772 --priority 1 --sid <sid> --ch <type>/<channel> - -"
-    }
-  ],
-  
-  "channels": [
-    { "type": "GR", "channel": "15", "name" : "東海テレビ" },
-    { "type": "GR", "channel": "24", "name" : "NHK教育" },
-    { "type": "GR", "channel": "29", "name" : "NHK総合" },
-    { "type": "GR", "channel": "16", "name" : "CBCテレビ" },
-    { "type": "GR", "channel": "17", "name" : "中京テレビ" },
-    { "type": "GR", "channel": "26", "name" : "テレビ愛知" },
-    { "type": "GR", "channel": "14", "name" : "メ〜テレ" }
-  ]
+  "recordedFormat": "[<date:yymmdd-HHMM>][<type><channel>][<tuner>]<title>.m2ts"
 }

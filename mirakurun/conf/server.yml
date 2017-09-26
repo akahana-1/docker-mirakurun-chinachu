@@ -1,5 +1,5 @@
 # logLevel: <number>
-logLevel: 2
+logLevel: 3
 
 # path: <string>
 path: /var/run/mirakurun.sock
@@ -10,3 +10,6 @@ path: /var/run/mirakurun.sock
 # Use this in LAN or VPN.
 # `~` to disable TCP port listening.
 port: 40772
+
+# disableIPv6 : <true or false>
+disableIPv6: true

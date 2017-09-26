@@ -70,7 +70,15 @@
   decoder: arib-b1-stream-test
   isDisabled: true
 
-- name: FSUSB2
+  # - name: FSUSB2
+  #   types:
+  #     - GR
+  #   command: recfsusb2i <channel> - -
+  #   decoder: b25
+  #   isDisabled: true
+
+- name: S270
   types:
     - GR
-  command: recfsusb2i <channel> - -
+  command: recdvb --dev 0 <channel> - -
+  decoder: arib-b25-stream-test
