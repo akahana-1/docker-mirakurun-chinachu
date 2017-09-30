@@ -11,5 +11,7 @@ fi
 
 rm -f /run/pcscd/pcscd.comm >/dev/null 2>&1
 
-pcscd -f --error &
-npm start
+pcscd -f --error 2>&1 > pcscd-error.log &
+# /usr/bin/mirakurun start
+# /usr/bin/mirakurun log server
+npm start 2>&1 mirakurun-error.log

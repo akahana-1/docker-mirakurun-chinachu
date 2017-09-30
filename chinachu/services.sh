@@ -1,5 +1,4 @@
 #!/bin/bash
-# Chinachuをinit.dからpm2管理に変更すべし
 if [ ! -s /usr/local/chinachu/config.json ]; then
 	cat /usr/local/chinachu/config.sample.json > /usr/local/chinachu/config.json
 fi

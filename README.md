@@ -1,5 +1,10 @@
-# docker-mirakurun-chinachu
-Mirakurun と Chinachu をDockerコンテナに閉じ込めました
+# docker-mirakurun-chinachu for PX-S1UD and ACR39U
+[公式Dockerコンテナ](https://github.com/Chinachu/docker-mirakurun-chinachu)をベースに
+
+- チューナー : [Mygica S270](https://www.geniatech.com/product/s270-fullseg-usb-tv/)
+- カードリーダー : [ACR39U-NTTcom](http://www.ntt.com/business/services/application/authentication/jpki/download6.html)
+
+に変更
 
 ## Constitution
 ### Mirakurun

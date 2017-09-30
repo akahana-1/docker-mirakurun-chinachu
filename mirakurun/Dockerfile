@@ -16,7 +16,6 @@ RUN set -x \
 		curl \
 		ca-certificates \
 		util-linux \
-	\
 	&& apk add --virtual .build-deps \
 		git \
 		make \
