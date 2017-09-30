@@ -1,6 +1,7 @@
 #!/bin/bash
-if [ ! -s config.json ]; then
-	cat config.sample.json > config.json
+# Chinachuをinit.dからpm2管理に変更すべし
+if [ ! -s /usr/local/chinachu/config.json ]; then
+	cat /usr/local/chinachu/config.sample.json > /usr/local/chinachu/config.json
 fi
 
 rm -f /var/run/chinachu-operator.pid > /dev/null 2>&1

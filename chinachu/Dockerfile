@@ -1,5 +1,5 @@
 FROM alpine:3.6
-LABEL maintainer "h-mineta <h-mineta@0nyx.net>"
+LABEL maintainer "akahana-1 <aakahana@gmail.com>"
 
 ENV DOCKER="YES"
 ARG REPOSITORY="git://github.com/Chinachu/Chinachu.git"
@@ -14,7 +14,7 @@ RUN set -x \
 	&& apk upgrade --update \
 	&& apk add \
 		bash \
-		'nodejs>=6.2.0' \
+		'nodejs>=6.5.0' \
 		nodejs-npm \
 		coreutils \
 		curl \

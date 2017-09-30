@@ -1,0 +1,27 @@
+{
+  "uid" : "chinachu",
+  "recordedDir" : "/usr/local/chinachu/recorded/",
+  "temporaryDir": "",
+  
+  "wuiUsers": [
+    "akari:bakuhatsu"
+  ],
+  "wuiAllowCountries": ["JP"],
+  
+  "wuiOpenServer"  : true,
+  "wuiOpenPort"    : 20772,
+  "wuiOpenHost"    : "0.0.0.0",
+  "wuiTlsKeyPath"  : null,
+  "wuiTlsCertPath" : null,
+  "wuiXFF"         : false,
+  "wuiHost"        : "::",
+
+  "mirakurunPath" : "http://container-mirakurun:40772/",
+  "schedulerEpgRecordTime": 5,
+  "operSchedulerProcessTime" : 5000,
+  "operSchedulerIntervalTime" : 600000,
+  "operRecOffsetStart" : 3000,
+  "operRefOffsetEnd" : -2000,
+
+  "recordedFormat": "[<date:yymmdd-HHMM>][<type><channel>][<tuner>]<title>.m2ts"
+}
