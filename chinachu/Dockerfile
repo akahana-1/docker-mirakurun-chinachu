@@ -38,8 +38,6 @@ RUN set -x \
 		eudev-dev \
 		libevent-dev \
 	\
-	&& npm install rivarun -g \
-	\
 	&& adduser -D -u ${USER_ID} -h ${WORK_DIR} ${USER_NAME} \
 	&& mkdir -p ${WORK_DIR} \
 	&& git clone ${REPOSITORY} ${WORK_DIR} \
@@ -51,7 +49,7 @@ RUN set -x \
 	&& ./chinachu service wui initscript | sudo -u ${USER_NAME} tee /tmp/chinachu-wui \
 	&& sudo -u ${USER_NAME} mkdir log \
 	\
-	&& chown root. /tmp/chinachu-operator /tmp/chinachu-wui \
+	#&& chown root. /tmp/chinachu-operator /tmp/chinachu-wui \
 	&& chmod u+x /tmp/chinachu-operator /tmp/chinachu-wui \
 	&& mv /tmp/chinachu-operator /etc/init.d/ \
 	&& mv /tmp/chinachu-wui /etc/init.d/ \
@@ -64,9 +62,9 @@ RUN set -x \
 	&& rm -rf /var/cache/apk/*
 
 	# forward request and error logs to docker log collector
-	#&& ln -sf /dev/stdout /usr/local/chinachu/log/operator \
-	#&& ln -sf /dev/stdout /usr/local/chinachu/log/scheduler \
-	#&& ln -sf /dev/stdout /usr/local/chinachu/log/wui
+	#&& ln -sf /dev/stdout ${WORK_DIR}/log/operator \
+	#&& ln -sf /dev/stdout ${WORK_DIR}/log/scheduler \
+	#&& ln -sf /dev/stdout ${WORK_DIR}/log/wui
 
 COPY services.sh /usr/local/bin
 COPY config.sample.json ${WORK_DIR}
