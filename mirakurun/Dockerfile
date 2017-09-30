@@ -15,6 +15,7 @@ RUN set -x \
 		pcsc-lite-libs \
 		curl \
 		ca-certificates \
+		util-linux \
 	&& apk add --virtual .build-deps \
 		git \
 		make \

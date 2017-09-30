@@ -4,9 +4,6 @@ services:
     build:
       context: mirakurun
     container_name: mirakurun
-    cap_add:
-      - SYS_NICE
-      - SYS_ADMIN
     privileged: True
     ports:
       - "40772:40772"
@@ -17,7 +14,6 @@ services:
       - ./mirakurun/conf:/usr/local/etc/mirakurun
       - ./mirakurun/db:/usr/local/var/db/mirakurun
       - /dev/dvb/adapter0:/dev/dvb/adapter0 # DVB Dongle
-  
   chinachu:
     build:
       context: chinachu
