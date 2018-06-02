@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM node:8.11.2-alpine
 LABEL maintainer "akahana-1 <aakahana@gmail.com>"
 
 # ENV DOCKER="YES"
@@ -7,8 +7,6 @@ RUN set -x \
 	&& apk upgrade --update \
 	&& apk add \
 		bash \
-		'nodejs>=6.5.0' \
-		nodejs-npm \
 		coreutils \
 		libusb \
 		pcsc-lite \
@@ -52,8 +50,9 @@ RUN set -x \
 	&& make install \
 	# ccid for ACR39U Card Reader
 	&& cd /tmp \
-	&& curl -o ccid.zip https://www.acs.com.hk/download-driver-unified/6258/ACS-Unified-Driver-Lnx-Mac-114-P.zip \
-	&& unzip -o ccid.zip \
+	# && curl -o ccid.zip https://www.acs.com.hk/download-driver-unified/6258/ACS-Unified-Driver-Lnx-Mac-114-P.zip \
+	# && unzip -o ccid.zip \
+	&& curl -L -o acsccid-1.1.5.tar.bz2 http://downloads.sourceforge.net/acsccid/acsccid-1.1.5.tar.bz2 \
 	&& tar xjf acsccid-*.tar.bz2 \
 	&& cd acsccid-* \
 	&& ./configure \
