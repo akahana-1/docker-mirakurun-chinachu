@@ -1,6 +1,6 @@
 version: '2'
 services:
-  mirakurun: build:
+  mirakurun:
     build:
       context: mirakurun
     container_name: mirakurun
