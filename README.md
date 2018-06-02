@@ -19,32 +19,28 @@
 
 ## 動作確認環境
 > OS
->>CentOS Linux release 7.2.1511 (Core)  
->> Linux 3.10.0-327.22.2.el7.x86_64  
->
->>Fedora release 25 (Twenty Five)  
->> Linux 4.9.4-201.fc25.x86_64  
+>>Debian GNU/Linux 9.4 (stretch)  
+>> Linux 4.9.82-1+deb9u3  
 
 >Docker
->>version 1.11.2, build b9f10c9  
->>version 17.03.0-ce, build 60ccb22  
+>>version 18.03.0-ce, build 0520e24  
 
 >Tuner
->>ISDB-S, ISDB-T Tuner PT3  
+>>ISDB-T Tuner Mygica S270  
 
 >Smart card reader
->>USB SmartCard Reader NTT Communications Corp. SCR3310-NTTCom  
+>>USB SmartCard Reader NTT Communications Corp. ACR39U-NTTcom  
 
 ## 利用方法
 - 最新のdocker & docker-compose がインストール済
 - SELinuxの無効化推奨
-- ホストマシンにPT3 Driverがインストール済
+- ホストマシンにチューナーのファームウェアがインストール済み
+    + Mygica S270のドライバはLinuxカーネルに取り込まれているため/dev/dvb/adapter\*で認識される
 ```
-$ ls -l /dev/pt*video*
-crw-rw-rw- 1 root video 246, 0 Jun 26 16:07 /dev/pt3video0
-crw-rw-rw- 1 root video 246, 1 Jun 26 16:07 /dev/pt3video1
-crw-rw-rw- 1 root video 246, 2 Jun 26 16:07 /dev/pt3video2
-crw-rw-rw- 1 root video 246, 3 Jun 26 16:07 /dev/pt3video3
+$ ls -l /dev/dvb/adapter*/
+crw-rw---- 1 root video 212, 0 Jun 26 16:07 demux0
+crw-rw---- 1 root video 212, 1 Jun 26 16:07 dvr0
+crw-rw---- 1 root video 212, 2 Jun 26 16:07 frontend0
 ```
 - B-CAS 用に利用するスマートカードリーダーはMirakurunコンテナ内で管理しますので  
 ホストマシン上のpcscdは停止してください
