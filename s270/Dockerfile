@@ -51,7 +51,7 @@ RUN set -x \
 	&& apk del --purge .build-deps \
 	&& npm cache verify \
 	&& rm -rf /tmp/* \
-	&& rm -rf /var/cache/apk/*
+	&& rm -rf /var/cache/apk/* \
 
 	# forward request and error logs to docker log collector
 	&& ln -sf /dev/stdout /usr/local/var/log/mirakurun.stdout-0.log \

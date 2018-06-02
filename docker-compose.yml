@@ -34,7 +34,7 @@ services:
     build:
       context: s270
     container_name: s270
-    priviliged: True
+    privileged: True
     volumes:
       - /dev/dvb/adapter0:/dev/dvb/adapter0
       - /etc/localtime:/etc/localtime:ro
