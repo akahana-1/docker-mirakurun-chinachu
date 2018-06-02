@@ -1,6 +1,6 @@
 version: '2'
 services:
-  mirakurun:
+  mirakurun: build:
     build:
       context: mirakurun
     container_name: mirakurun
@@ -13,7 +13,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./mirakurun/conf:/usr/local/etc/mirakurun
       - ./mirakurun/db:/usr/local/var/db/mirakurun
-      - /dev/dvb/adapter0:/dev/dvb/adapter0 # DVB Dongle
   chinachu:
     build:
       context: chinachu
@@ -28,6 +27,28 @@ services:
       - ./chinachu/conf/config.json:/usr/local/chinachu/config.json
       - ./chinachu/conf/rules.json:/usr/local/chinachu/rules.json
       - ./chinachu/data:/usr/local/chinachu/data
-      - /mnt/nas/recorded:/usr/local/chinachu/recorded
-    links:
-      - mirakurun:container-mirakurun
+      - ./recorded:/usr/local/chinachu/recorded
+#    links:
+#      - "mirakurun:mirakurun"
+  mirakurun-s270:
+    build:
+      context: s270
+    container_name: s270
+    priviliged: True
+    volumes:
+      - /dev/dvb/adapter0:/dev/dvb/adapter0
+      - /etc/localtime:/etc/localtime:ro
+      - ./s270/conf:/usr/local/etc/mirakurun
+      - ./s270/db:/usr/local/var/db/mirakurun
+  mirakurun-px4:
+    build:
+      context: px4
+    container_name: px4
+    privileged: True
+    devices:
+      - /dev/px4video0
+      - /dev/px4video1
+      - /dev/px4video2
+      - /dev/px4video3
+      - /dev/dvb/adapter0:/dev/dvb/adapter0
+      - /etc/localtime:/etc/localtime:ro

@@ -62,23 +62,12 @@
   decoder: arib-b25-stream-test
   isDisabled: true
 
-- name: mirakurun-s270
-  types:
-    - GR
-  remoteMirakurunHost: S270
-  remoteMirakurunDecoder: false
-  decoder: arib-b25-stream-test
-
-- name: mirakurun-px4-S1
+- name: W3PE4-S1
   types:
     - BS
-  remoteMirakurunHost: px4
-  remoteMirakurunDecoder: false
-  decoder: arib-b25-stream-test
+  command: recpt1 --device /dev/px4video2 <channel> - -
 
-- name: mirakurun-px4-S2
+- name: W3PE4-S1
   types:
     - BS
-  remoteMirakurunHost: px4
-  remoteMirakurunDecoder: false
-  decoder: arib-b25-stream-test
+  command: recpt1 --device /dev/px4video3 <channel> - -
