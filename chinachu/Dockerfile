@@ -3,12 +3,12 @@ LABEL maintainer "akahana-1 <aakahana@gmail.com>"
 
 ENV DOCKER="YES"
 ARG REPOSITORY="git://github.com/Chinachu/Chinachu.git"
-ARG BRANCH="master"
+ARG BRANCH="gamma"
 
 ARG WORK_DIR="/usr/local/chinachu"
 
 ARG USER_NAME="chinachu"
-ARG USER_ID="1000"
+ARG USER_ID="1001"
 
 RUN set -x \
 	&& apk upgrade --update \
