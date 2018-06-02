@@ -60,7 +60,7 @@ RUN set -x \
 	&& make install \
 	# Cleaning
 	&& apk del --purge .build-deps \
-	&& npm cache clean \
+	&& npm cache verify \
 	&& rm -rf /tmp/* \
 	&& rm -rf /var/cache/apk/*
 
